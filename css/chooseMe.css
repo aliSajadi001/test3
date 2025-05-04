@@ -1,0 +1,16 @@
+.active-tab {
+    border-bottom: 4px solid #ffa500; /* Orange color */
+    color: #1e3a8a; /* Blue */
+  }
+  .tab-button {
+    border-bottom: 4px solid transparent;
+    color: #a0aec0; /* Stone */
+    transition: all 0.3s;
+  }
+  .tab-button:hover {
+    color: #4a5568; /* Gray */
+  }
+
+  body {
+    text-align: right;
+  }

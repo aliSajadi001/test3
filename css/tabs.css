@@ -1,0 +1,21 @@
+.dropdown {
+    display: none;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  .dropdown-trigger:hover .dropdown {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-link {
+    border-bottom: 4px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    border-color: #1e3a8a; /* blue-950 */
+  }

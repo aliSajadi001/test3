@@ -1,0 +1,96 @@
+ /* service.css equivalent */
+ .services-section {
+    background-color: #30cbfa; /* bg-blue-900 */
+    padding: 4rem 0;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .card-container {
+    perspective: 1000px;
+    height: 350px;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .card-front {
+    background-color: white;
+  }
+
+  .card-back {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+  }
+
+  /* Flip directions */
+  .flip-right:hover .card {
+    transform: rotateY(180deg);
+  }
+
+  .flip-left:hover .card {
+    transform: rotateY(-180deg);
+  }
+
+  .flip-top:hover .card {
+    transform: rotateX(180deg);
+  }
+
+  .flip-bottom:hover .card {
+    transform: rotateX(-180deg);
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-title {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+
+  /* اضافه کردن استایل برای تراز کردن متن‌ها در یک راستا */
+  .grid > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .grid > div > div > h3 {
+    width: 100%;
+  }
+
+  .grid > div > div > p {
+    width: 100%;
+  }

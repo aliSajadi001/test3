@@ -21,289 +21,28 @@
     />
 
     <title>کلینیک پزشکی</title>
+    <!-- --------------------Subbaner styles--------------- -->
+    <link rel="stylesheet" href="./css/subBaner.css" />
+    <!-- --------------------Subbaner styles--------------- -->
+
+    <link rel="stylesheet" href="./css/information.css" />
+    <!-- --------------------Subbaner styles--------------- -->
+
+    <link rel="stylesheet" href="./css/chooseMe.css" />
+    <!-- --------------------Tabs styles------------------- -->
+
+    <link rel="stylesheet" href="./css/tabs.css" />
+    <!-- --------------------Tabs styles------------------- -->
+
+    <link rel="stylesheet" href="./css/services.css" />
+    <!-- --------------------Down button------------------- -->
+
+    <link rel="stylesheet" href="./css/downButton.css" />
+
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
       }
-
-      .dropdown {
-        display: none;
-        transition: all 0.3s ease;
-        transform: translateY(10px);
-        opacity: 0;
-      }
-
-      .dropdown-trigger:hover .dropdown {
-        display: block;
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      /* Pre-allocate space for the border to prevent layout shift */
-      .nav-link {
-        border-bottom: 4px solid transparent;
-        transition: border-color 0.3s ease;
-      }
-
-      .nav-link:hover {
-        border-color: #1e3a8a; /* blue-950 */
-      }
-      /* --------------------------------------Baner style------------------------- */
-      .banner-slide {
-        position: absolute;
-        inset: 0;
-        transition: opacity 1000ms ease-in-out;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .banner-content {
-        position: absolute;
-        transition: opacity 1000ms ease-in-out;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .service-card:hover .service-label {
-        transform: translate(-50%, -16px);
-      }
-
-      .service-label {
-        transition: transform 0.3s ease;
-        transform: translate(-50%, 0);
-      }
-
-      /* -------------------------------Information stylr------------------------------------ */
-
-      .background-fade {
-        background-color: rgb(245, 245, 244); /* stone-100 equivalent */
-        position: relative;
-        overflow: hidden; /* Ensure the pseudo-element doesn't extend outside */
-      }
-
-      /* Add gradient fade effect at the top */
-      .background-fade::before {
-        content: "";
-        position: absolute;
-        top: -50px; /* Start above the container to ensure no visible border */
-        left: 0;
-        right: 0;
-        height: 150px; /* Make it tall enough to cover the top portion */
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(245, 245, 244, 0.9) 60%,
-          rgba(245, 245, 244, 0.8) 80%,
-          rgba(245, 245, 244, 0) 100%
-        );
-        z-index: 1;
-      }
-
-      /* Add padding to the top to compensate for the fade effect */
-      #information-section {
-        padding-top: 50px;
-      }
-
-      .stat-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2.5rem;
-        border-radius: 0.5rem;
-        position: relative;
-        z-index: 2; /* Ensure content appears above the gradient */
-      }
-
-      .stat-icon {
-        color: #d97706; /* amber-600 equivalent */
-        font-size: 4rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .stat-value {
-        color: #d97706; /* amber-600 equivalent */
-        font-size: 1.875rem;
-        margin-bottom: 0.5rem;
-        font-weight: 800;
-      }
-
-      .stat-label {
-        color: #172554; /* blue-950 equivalent */
-        font-weight: 800;
-        font-size: 1.5rem;
-        text-align: center;
-      }
-
-      .stats-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-        padding: 0 2.5rem;
-        position: relative;
-        z-index: 2; /* Ensure content appears above the gradient */
-      }
-
-      @media (min-width: 768px) {
-        .stats-container {
-          grid-template-columns: repeat(4, 1fr);
-        }
-
-        .background-fade::before {
-          height: 200px; /* Taller gradient on larger screens */
-        }
-      }
-
-      /* -------------------Choose  my style--------------------------------- */
-      .active-tab {
-        border-bottom: 4px solid #ffa500; /* Orange color */
-        color: #1e3a8a; /* Blue */
-      }
-      .tab-button {
-        border-bottom: 4px solid transparent;
-        color: #a0aec0; /* Stone */
-        transition: all 0.3s;
-      }
-      .tab-button:hover {
-        color: #4a5568; /* Gray */
-      }
-
-      body {
-        text-align: right;
-      }
-
-      /* ------------------------------------------------------------------- */
-
-      /* service.css equivalent */
-      .services-section {
-        background-color: #30cbfa; /* bg-blue-900 */
-        padding: 4rem 0;
-      }
-
-      .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .card-container {
-        perspective: 1000px;
-        height: 350px;
-      }
-
-      .card {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        transition: transform 0.8s;
-      }
-
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-      }
-
-      .card-front {
-        background-color: white;
-      }
-
-      .card-back {
-        background-size: cover;
-        background-position: center;
-        transform: rotateY(180deg);
-      }
-
-      /* Flip directions */
-      .flip-right:hover .card {
-        transform: rotateY(180deg);
-      }
-
-      .flip-left:hover .card {
-        transform: rotateY(-180deg);
-      }
-
-      .flip-top:hover .card {
-        transform: rotateX(180deg);
-      }
-
-      .flip-bottom:hover .card {
-        transform: rotateX(-180deg);
-      }
-
-      .icon-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .card-title {
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      .rtl {
-        direction: rtl;
-      }
-
-      /* اضافه کردن استایل برای تراز کردن متن‌ها در یک راستا */
-      .grid > div > div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-
-      .grid > div > div > h3 {
-        width: 100%;
-      }
-
-      .grid > div > div > p {
-        width: 100%;
-      }
-
-      /* --------------------------------Healthy Tips------------------------------------------------- */
-
-      .shadow-text {
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-      }
-      .rtl {
-        direction: rtl;
-      }
-      /* اضافه کردن استایل برای نوار تب‌ها */
-      .tabs-wrapper {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        overflow-x: auto;
-        scrollbar-width: thin;
-        -ms-overflow-style: none;
-      }
-      .tabs-wrapper::-webkit-scrollbar {
-        height: 4px;
-      }
-      .tabs-wrapper::-webkit-scrollbar-thumb {
-        background-color: rgba(14, 165, 233, 0.5);
-        border-radius: 4px;
-      }
-      @media (max-width: 640px) {
-        .tabs-wrapper {
-          justify-content: flex-start;
-          padding-bottom: 8px;
-        }
-      }
-
-      /* -------------------------  ---------------------------------------- */
       .rtl {
         direction: rtl;
       }
@@ -331,14 +70,10 @@
           transform: translateY(-4px);
         }
       }
-
-      .animate-bounce-slow {
-        animation: bounce-slow 1.5s infinite;
-      }
     </style>
   </head>
   <body class="font-sans">
-    <!-- Header Section -->
+    <!----------------------------------- Header Section ------------------------------>
     <div
       class="w-full h-[55px] px-[60px] hidden lg:flex items-center justify-between"
     >
@@ -372,7 +107,7 @@
       </div>
     </div>
 
-    <!------===---------------===------- Navbar -----===---------------===-------->
+    <!-------------------------------------- Navbar ----------------------------------->
     <nav
       class="lg:bg-white bg-stone-700 lg:px-[90px] px-[40px] py-4 flex justify-between items-center"
     >
@@ -392,7 +127,7 @@
         />
       </svg>
 
-      <!-- ------------------------------------------------Mobile menu-------------------------------------------------->
+      <!-- ------------------------------------------------Mobile menu--------------------------------------->
       <div
         id="mobile-menu-overlay"
         class="fixed inset-0 z-50 hidden"
@@ -414,9 +149,8 @@
               />
             </div>
 
-            <!-- منوی موبایل -->
+            <!-- ----------------------------------------Mobile menu------------------------------------------>
             <div class="flex flex-col space-y-4">
-              <!-- خانه -->
               <div class="menu-item">
                 <div
                   class="flex justify-between items-center py-3 cursor-pointer menu-header"
@@ -608,9 +342,7 @@
 
       <!-- Navigation items on the right -->
       <div class="flex items-center lg:gap-[30px] justify-between">
-        <!-- Navigation tabs with dropdowns -->
         <div class="lg:flex space-x-6 space-x-10 hidden">
-          <!-- Home tab -->
           <div class="dropdown-trigger relative">
             <a
               href="#"
@@ -869,9 +601,7 @@
           </div>
         </div>
 
-        <!-- Vertical divider -->
         <div class="h-8 border-l border-gray-300 mx-4 hidden lg:block"></div>
-        <!-- Search icon moved to the right -->
         <div class="mr-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -891,168 +621,109 @@
       </div>
     </nav>
 
-    <div
-      id="banner"
-      class="relative w-full lg:h-screen h-[400px] overflow-hidden"
-    >
-      <!-- Banner slides will be inserted here by JavaScript -->
-    </div>
+    <!------------------------------Baner Slider--------------------------------------->
+    <section class="relative w-full h-[700px] overflow-hidden">
+      <!----------------------Baner images------------->
+      <div
+        class="absolute inset-0 transition-opacity duration-1000 opacity-100"
+        id="slide-1"
+      >
+        <img
+          src="public/baner/pexels-pixabay-40568.jpg"
+          alt="تصویر پزشکی 1"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute left-10 top-1/4 w-[60%] p-6">
+          <h1 class="lg:text-4xl font-extrabold text-2xl text-indigo-900 mb-4">
+            مرکز تخصصی پزشکی سلامت
+          </h1>
+          <p class="text-blue-700 mb-6 text-sm lg:text-xl text-indigo-600">
+            با بهترین متخصصان و تجهیزات روز دنیا در خدمت شما هستیم
+          </p>
+          <button
+            class="bg-sky-400 hover:bg-sky-500 rounded-lg px-5 py-2 text-white transition"
+          >
+            رزرو نوبت
+          </button>
+        </div>
+      </div>
 
-    <script>
-      // Banner data
-      const images = [
-        {
-          src: "public/baner/800-Doctors-Talking-GettyImages-1421919753.jpg",
-          text: [
-            "مراقب سلامتی خود باشید",
-            "از اولین روز های فعالیت تیم ما برای ایجاد یک سرویس پزشکی با کیفیت بالا متمرکز شده است",
-            "رزرو نوبت",
-          ],
-        },
-        {
-          src: "public/baner/family_doctor.jpg",
-          text: [
-            "بهترین تحقیقات ازمایشگاهی در دسترس 24/4",
-            "از اولین روز های فعالیت تیم ما برای ایجاد یک سرویس پزشکی با کیفیت بالا متمرکز شده است",
-            "رزرو نوبت",
-          ],
-        },
-        {
-          src: "public/baner/ten-reasons-you-must-have-a-primary-care-doctor-1024x585.webp",
-          text: [
-            "مرسلام! من دکتر پل می هستم، درمانگر سلامت خانواده",
-            "از اولین روز های فعالیت تیم ما برای ایجاد یک سرویس پزشکی با کیفیت بالا متمرکز شده است",
-            "رزرو نوبت",
-          ],
-        },
-      ];
+      <div
+        class="absolute inset-0 transition-opacity duration-1000 opacity-0"
+        id="slide-2"
+      >
+        <img
+          src="public/baner/360_F_321233723_3nSdORPnL4nPOfGEocyCGVCI0RoXuRVo.jpg"
+          alt="تصویر پزشکی 2"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute right-10 bottom-1/3 w-[60%] p-6">
+          <h1 class="lg:text-4xl font-extrabold text-2xl text-indigo-900 mb-4">
+            جراحی های پیشرفته
+          </h1>
+          <p class="text-blue-700 mb-6 text-sm lg:text-xl text-indigo-600">
+            انجام کلیه جراحی ها با جدیدترین روش های درمانی
+          </p>
+          <button
+            class="bg-sky-400 hover:bg-sky-500 rounded-lg px-5 py-2 text-white transition"
+          >
+            رزرو نوبت
+          </button>
+        </div>
+      </div>
 
-      // Initialize banner
-      document.addEventListener("DOMContentLoaded", function () {
-        const bannerContainer = document.getElementById("banner");
-        let currentIndex = 0;
+      <div
+        class="absolute inset-0 transition-opacity duration-1000 opacity-0"
+        id="slide-3"
+      >
+        <img
+          src="public/baner/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2JlY29taW5nLWRvY3Rvci5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==.webp"
+          alt="تصویر پزشکی 3"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute left-1/4 top-10 w-[60%] p-6 text-center">
+          <h1 class="lg:text-4xl font-extrabold text-2xl text-indigo-900 mb-4">
+            پزشکی پیشگیرانه
+          </h1>
+          <p class="text-blue-700 mb-6 text-sm lg:text-xl text-indigo-600">
+            پیشگیری بهتر از درمان است - معاینات دوره ای را جدی بگیرید
+          </p>
+          <button
+            class="bg-sky-400 hover:bg-sky-500 rounded-lg px-5 py-2 text-white transition"
+          >
+            رزرو نوبت
+          </button>
+        </div>
+      </div>
 
-        // Create banner slides
-        images.forEach((image, index) => {
-          // Create slide container
-          const slide = document.createElement("div");
-          slide.className = `banner-slide ${
-            index === 0 ? "opacity-100" : "opacity-0"
-          }`;
-          slide.style.backgroundImage = `url(${image.src})`;
+      <div
+        class="absolute inset-0 transition-opacity duration-1000 opacity-0"
+        id="slide-4"
+      >
+        <img
+          src="public/baner/The Importance of Water in a Laboratory.png"
+          alt="تصویر پزشکی 4"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute right-10 top-10 w-[60%] p-6">
+          <h1 class="lg:text-4xl font-extrabold text-2xl text-indigo-900 mb-4">
+            کلینیک تخصصی
+          </h1>
+          <p class="text-blue-700 mb-6 text-sm lg:text-xl text-indigo-600">
+            ارائه خدمات تخصصی با کادر مجرب و حرفه ای
+          </p>
+          <button
+            class="bg-sky-400 hover:bg-sky-500 rounded-lg px-5 py-2 text-white transition"
+          >
+            رزرو نوبت
+          </button>
+        </div>
+      </div>
+    </section>
 
-          // Create content container
-          const content = document.createElement("div");
-          content.className = `banner-content ${
-            index === 0 ? "opacity-100" : "opacity-0"
-          }`;
+    <script src="./baner.js"></script>
 
-          // Set position based on slide index
-          if (index === 0) {
-            content.style.left = "60px";
-            content.style.bottom = "100px";
-            content.style.transform = "translateY(0)";
-          } else if (index === 1) {
-            content.style.bottom = "60px";
-            content.style.right = "50px";
-            content.style.transform = "translateY(0)";
-          } else if (index === 2) {
-            content.style.left = "80px";
-            content.style.top = "70px";
-            content.style.transform = "translateX(0)";
-          }
-
-          // Create heading
-          const heading = document.createElement("h2");
-          heading.className = "lg:text-5xl text-3xl text-blue-500 font-bold";
-          heading.textContent = image.text[0];
-
-          // Create subheading
-          const subheading = document.createElement("h2");
-          subheading.className = "lg:text-lg text-md text-blue-800 font-bold";
-          subheading.textContent = image.text[1];
-
-          // Create button
-          const button = document.createElement("button");
-          button.className =
-            "lg:text-lg text-md lg:font-extrabold font-medium bg-blue-500 p-3 text-white lg:w-[200px] w-[100px] rounded-md";
-          button.textContent = image.text[2];
-
-          // Append elements
-          content.appendChild(heading);
-          content.appendChild(subheading);
-          content.appendChild(button);
-          slide.appendChild(content);
-          bannerContainer.appendChild(slide);
-        });
-
-        // Function to update slide positions
-        function getPositionStyles(index) {
-          switch (index) {
-            case 0:
-              return {
-                left: "60px",
-                bottom: "100px",
-                transform: "translateY(0)",
-              };
-            case 1:
-              return {
-                bottom: "60px",
-                right: "50px",
-                transform: "translateY(0)",
-              };
-            case 2:
-              return {
-                left: "80px",
-                top: "70px",
-                transform: "translateX(0)",
-              };
-            default:
-              return {};
-          }
-        }
-
-        // Function to update active slide
-        function updateSlide() {
-          const slides = document.querySelectorAll(".banner-slide");
-          const contents = document.querySelectorAll(".banner-content");
-
-          slides.forEach((slide, index) => {
-            if (index === currentIndex) {
-              slide.classList.add("opacity-100");
-              slide.classList.remove("opacity-0");
-            } else {
-              slide.classList.add("opacity-0");
-              slide.classList.remove("opacity-100");
-            }
-          });
-
-          contents.forEach((content, index) => {
-            if (index === currentIndex) {
-              content.classList.add("opacity-100");
-              content.classList.remove("opacity-0");
-
-              // Update position
-              const position = getPositionStyles(currentIndex);
-              Object.keys(position).forEach((key) => {
-                content.style[key] = position[key];
-              });
-            } else {
-              content.classList.add("opacity-0");
-              content.classList.remove("opacity-100");
-            }
-          });
-
-          // Update index for next slide
-          currentIndex = (currentIndex + 1) % images.length;
-        }
-
-        // Set interval to change slides
-        setInterval(updateSlide, 10000); // 10 seconds, matching the React component
-      });
-    </script>
-
-    <!------------------------------------- SubBanner Component ------------------------------------->
+    <!------------------------------------- SubBanner  ------------------------------------->
     <div class="w-full relative flex items-center justify-center">
       <div class="bg-sky-400 py-[100px] px-[30px]">
         <div class="flex flex-col md:flex-row">
@@ -1093,7 +764,7 @@
                 class="w-[350px] h-[250px] object-cover rounded-xl"
               />
               <span
-                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10"
+                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10 lg:text-xl lg:font-extrabold text-xl text-bold"
               >
                 مراقبت ویژه
               </span>
@@ -1111,7 +782,7 @@
                 class="w-[350px] h-[250px] object-cover rounded-xl"
               />
               <span
-                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10"
+                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10 lg:text-xl lg:font-extrabold text-xl text-bold"
               >
                 درمان با کیفیت
               </span>
@@ -1129,9 +800,9 @@
                 class="w-[350px] h-[250px] object-cover rounded-xl"
               />
               <span
-                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10"
+                class="lg:p-5 py-2 px-7 font-extrabold text-sm lg:text-md text-blue-950 absolute left-1/2 bg-white rounded-xl flex-wrap flex items-center justify-center shadow-lg service-label text-right bottom-[0px] z-10 lg:text-xl lg:font-extrabold text-xl text-bold"
               >
-                ازمایش ازمایشگاهی
+                ازمایشگاهی
               </span>
             </div>
           </div>
@@ -1139,24 +810,7 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add hover effect for service cards
-        const serviceCards = document.querySelectorAll(".service-card");
-
-        serviceCards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            const label = this.querySelector(".service-label");
-            label.style.transform = "translate(-50%, -16px)";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            const label = this.querySelector(".service-label");
-            label.style.transform = "translate(-50%, 50%)";
-          });
-        });
-      });
-    </script>
+    <script src="./js/subBaner.js"></script>
 
     <!------------------------------------- Information Section ------------------------------------->
     <div
@@ -1168,117 +822,7 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Stats data
-        const stats = [
-          {
-            id: 1,
-            icon: "fa-solid fa-heart-circle-plus",
-            value: 1000,
-            label: "بیماران راضی",
-          },
-          {
-            id: 2,
-            icon: "fa-solid fa-globe",
-            value: 500,
-            label: "بخش سلامت",
-          },
-          {
-            id: 3,
-            icon: "fa-solid fa-file-lines",
-            value: 300,
-            label: "انواع تحقیق",
-          },
-          {
-            id: 4,
-            icon: "fa-solid fa-trophy",
-            value: 20,
-            label: "برنده جوایز",
-          },
-        ];
-
-        const statsContainer = document.getElementById("stats-container");
-
-        // Create and append stat items
-        stats.forEach((stat) => {
-          const statItem = document.createElement("div");
-          statItem.className = "stat-item";
-
-          // Create icon
-          const icon = document.createElement("i");
-          icon.className = `${stat.icon} stat-icon`;
-
-          // Create value counter
-          const value = document.createElement("span");
-          value.className = "stat-value";
-          value.textContent = "0";
-          value.id = `stat-value-${stat.id}`;
-
-          // Create label
-          const label = document.createElement("span");
-          label.className = "stat-label";
-          label.textContent = stat.label;
-
-          // Append elements to stat item
-          statItem.appendChild(icon);
-          statItem.appendChild(value);
-          statItem.appendChild(label);
-
-          // Append stat item to container
-          statsContainer.appendChild(statItem);
-        });
-
-        // Intersection Observer for counting animation
-        const countUpElements = document.querySelectorAll(".stat-value");
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const element = entry.target;
-                const statId = parseInt(element.id.split("-")[2]);
-                const statData = stats.find((stat) => stat.id === statId);
-
-                if (statData) {
-                  countUp(element, 0, statData.value, 2000);
-                }
-
-                // Unobserve after animation starts
-                observer.unobserve(element);
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-
-        // Observe all counter elements
-        countUpElements.forEach((element) => {
-          observer.observe(element);
-        });
-
-        // Count up animation function
-        function countUp(element, startValue, endValue, duration) {
-          let startTime = null;
-
-          function step(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            const currentCount = Math.floor(
-              progress * (endValue - startValue) + startValue
-            );
-
-            element.textContent = currentCount;
-
-            if (progress < 1) {
-              requestAnimationFrame(step);
-            }
-          }
-
-          requestAnimationFrame(step);
-        }
-      });
-    </script>
+    <script src="./js/information.js"></script>
 
     <!-------------------------------- About Me Section -------------------------------->
     <div
@@ -1311,7 +855,7 @@
       <!-- Left Section - Text -->
       <div class="w-full lg:w-1/2 flex items-center justify-center p-4 lg:p-10">
         <div class="text-right relative w-full">
-          <h2 class="text-2xl font-bold mb-4 text-orange-500">درباره من</h2>
+          <h2 class="text-2xl font-bold mb-4 text-orange-500">-درباره من</h2>
           <h3 class="text-xl font-semibold mb-4 text-blue-950">
             مراقبت پزشکی حرفه‌ای به طور کامل
           </h3>
@@ -1331,17 +875,8 @@
       </div>
     </div>
 
-    <script>
-      // Optional JavaScript for interactivity
-      document.addEventListener("DOMContentLoaded", function () {
-        const readMoreBtn = document.querySelector("button");
-        readMoreBtn.addEventListener("click", function () {
-          console.log("Read more button clicked");
-          // Add your functionality here
-        });
-      });
-    </script>
-
+    <script src="./js/aboutMe.js"></script>
+    <!-- --------------------------Advance services---------------------- -->
     <div class="services-section w-full">
       <div class="px-9">
         <!-- Texts -->
@@ -1462,18 +997,7 @@
         </div>
       </div>
     </div>
-    <script>
-      // Optional JavaScript for button functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".card-back button");
-        buttons.forEach((button) => {
-          button.addEventListener("click", function (e) {
-            e.stopPropagation(); // Prevent card flip when clicking the button
-            console.log("بیشتر بدانید کلیک شد");
-          });
-        });
-      });
-    </script>
+    <script src="./js/advanceServices.js"></script>
 
     <!---------------------------------- Choose Me Section ---------------------------------->
 
@@ -1522,404 +1046,16 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Tab data
-        const tabs = [
-          {
-            id: 0,
-            title: "کیفیت",
-            content:
-              "هدف اصلی پزشکی خانواده ایجاد اعتماد بین بیمار و پزشک عمومی است، که امکان دستیابی به بهترین نتیجه درمانی را فراهم می‌کند. ویژگی‌های خاص کار پزشک عمومی (پزشک خانواده) از بسیاری جهات هم برای پزشکان عمومی و هم برای بیماران منطقی‌تر و سودمندتر است.",
-          },
-          {
-            id: 1,
-            title: "واکنش",
-            content:
-              "اهدف اصلی پزشکی خانواده ایجاد اعتماد بین بیمار و پزشک عمومی است، که امکان دستیابی به بهترین نتیجه درمانی را فراهم می‌کند. ویژگی‌های خاص کار پزشک عمومی (پزشک خانواده) از بسیاری جهات هم برای پزشکان عمومی و هم برای بیماران منطقی‌تر و سودمندتر است.",
-          },
-          {
-            id: 2,
-            title: "تمرکز",
-            content:
-              "هدف اصلی پزشکی خانواده ایجاد اعتماد بین بیمار و پزشک عمومی است، که امکان دستیابی به بهترین نتیجه درمانی را فراهم می‌کند. ویژگی‌های خاص کار پزشک عمومی (پزشک خانواده) از بسیاری جهات هم برای پزشکان عمومی و هم برای بیماران منطقی‌تر و سودمندتر است.",
-          },
-        ];
-
-        let activeTab = 0;
-        const tabsContainer = document.getElementById("tabs-container");
-        const tabContent = document.getElementById("tab-content");
-
-        // Create tabs
-        tabs.forEach((tab) => {
-          const tabButton = document.createElement("button");
-          tabButton.className = `py-2 md:py-3 px-2 md:px-4 focus:outline-none flex-1 text-center transition-all duration-300 text-xl md:text-2xl font-bold md:font-extrabold ${
-            activeTab === tab.id
-              ? "border-b-4 border-orange-400 text-blue-950"
-              : "hover:text-gray-700 border-b-4 border-transparent text-stone-400"
-          }`;
-          tabButton.textContent = tab.title;
-
-          tabButton.addEventListener("click", function () {
-            setActiveTab(tab.id);
-          });
-
-          tabsContainer.appendChild(tabButton);
-        });
-
-        // Set initial content
-        tabContent.textContent = tabs[activeTab].content;
-
-        // Function to update active tab
-        function setActiveTab(id) {
-          activeTab = id;
-
-          // Update tab buttons
-          const tabButtons = tabsContainer.querySelectorAll("button");
-          tabButtons.forEach((button, index) => {
-            if (index === id) {
-              button.className =
-                "py-2 md:py-3 px-2 md:px-4 focus:outline-none flex-1 text-center transition-all duration-300 text-xl md:text-2xl font-bold md:font-extrabold border-b-4 border-orange-400 text-blue-950";
-            } else {
-              button.className =
-                "py-2 md:py-3 px-2 md:px-4 focus:outline-none flex-1 text-center transition-all duration-300 text-xl md:text-2xl font-bold md:font-extrabold hover:text-gray-700 border-b-4 border-transparent text-stone-400";
-            }
-          });
-
-          // Update content
-          tabContent.textContent = tabs[id].content;
-        }
-      });
-    </script>
-
+    <script src="./js/chooseMe.js"></script>
+    <!-- ---------------------------------------Healt tips------------------------------- -->
     <div id="app"></div>
 
-    <script>
-      // آرایه tabs
-      const tabs = [
-        {
-          id: 0,
-          title: "همه",
-          images: [
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-            "public/baner/unnamed.jpg",
-            "public/baner/The Importance of Water in a Laboratory.png",
-            "public/baner/pexels-pixabay-40568.jpg",
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-            "public/baner/lab-quality-assurance-l.jpg",
-          ],
-        },
-        {
-          id: 1,
-          title: "کلینیک",
-          images: [
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-            "public/baner/pexels-pixabay-40568.jpg",
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/unnamed.jpg",
-            "public/baner/lab-quality-assurance-l.jpg",
-            "public/baner/The Importance of Water in a Laboratory.png",
-          ],
-        },
-        {
-          id: 2,
-          title: "خانواده",
-          images: [
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/lab-quality-assurance-l.jpg",
-            "public/baner/unnamed.jpg",
-            "public/baner/The Importance of Water in a Laboratory.png",
-            "public/baner/pexels-pixabay-40568.jpg",
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-          ],
-        },
-        {
-          id: 3,
-          title: "آزمایشگاه",
-          images: [
-            "public/baner/pexels-pixabay-40568.jpg",
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-            "public/baner/unnamed.jpg",
-            "public/baner/The Importance of Water in a Laboratory.png",
-            "public/baner/lab-quality-assurance-l.jpg",
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-          ],
-        },
-        {
-          id: 4,
-          title: "اطفال",
-          images: [
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-            "public/baner/unnamed.jpg",
-            "public/baner/The Importance of Water in a Laboratory.png",
-            "public/baner/pexels-pixabay-40568.jpg",
-            "public/baner/lab-quality-assurance-l.jpg",
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-          ],
-        },
-        {
-          id: 5,
-          title: "درمان",
-          images: [
-            "public/baner/The Importance of Water in a Laboratory.png",
-            "public/baner/nurses-patients-care-procedures.webp",
-            "public/baner/istockphoto-1012405368-612x612.jpg",
-            "public/baner/lab-quality-assurance-l.jpg",
-            "public/baner/workforce-feature.jpg__992x558_q85_crop-smart_subsampling-2_upscale.jpg",
-            "public/baner/unnamed.jpg",
-            "public/baner/pexels-pixabay-40568.jpg",
-          ],
-        },
-      ];
+    <script src="./js/healthTips.js"></script>
 
-      // معادل useState در React
-      let activeTab = 0;
-
-      // تابع رندر کامپوننت
-      function renderHealthTips() {
-        const appContainer = document.getElementById("app");
-
-        // ساخت ساختار HTML با نوار تب‌ها در سمت راست
-        let html = `
-              <div class="bg-white w-full p-4 md:p-8 rtl lg:mt-10 mt-52">
-                  <!-- Header -->
-                  <div class="mb-6 md:mb-10">
-                      <!-- Title at the top -->
-                      <div class="text-right mb-4">
-                          <h3 class="lg:text-xl text-sm text-orange-400 md:text-2xl font-bold">نکات بهداشتی</h3>
-                      </div>
-                      
-                      <!-- Subtitle and button - stacked on mobile, side by side on larger screens -->
-                      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
-                          <div class="text-right">
-                              <h2 class="text-blue-950 text-2xl md:text-3xl font-extrabold">ایمنی و راحتی</h2>
-                          </div>
-                          <div>
-                              <button class="bg-sky-600 text-white lg:px-4 px-3 text-sm lg:text-lg lg:py-2 py-1 md:px-6 md:py-3 rounded-lg hover:bg-blue-600 transition duration-300 inline-flex items-center gap-2 whitespace-nowrap">
-                                  اطلاعات بیشتر
-                                  <i class="fas fa-angle-left"></i>
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- Tabs - راست چین شده -->
-                  <div class="mt-6 md:mt-10">
-                      <div class="mb-8">
-                          <div class="tabs-wrapper">
-                              ${tabs
-                                .map(
-                                  (tab) => `
-                                  <button
-                                      data-id="${tab.id}"
-                                      class="py-1 px-3 md:py-2 md:px-4 lg:py-3 lg:px-5 ml-2 mb-2 focus:outline-none text-sm md:text-base lg:text-lg font-bold transition-all duration-300 whitespace-nowrap rounded-lg ${
-                                        activeTab === tab.id
-                                          ? "bg-sky-600 text-white"
-                                          : "text-gray-600 hover:text-blue-600 hover:bg-sky-50"
-                                      }"
-                                  >
-                                      ${tab.title}
-                                  </button>
-                              `
-                                )
-                                .join("")}
-                          </div>
-                      </div>
-                      
-                      <!-- Images -->
-                      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                          ${tabs[activeTab].images
-                            .map(
-                              (image, index) => `
-                              <div
-                                  class="cursor-pointer transform transition-transform duration-300 hover:scale-105 relative group rounded-xl overflow-hidden shadow-md"
-                              >
-                                  <img
-                                      src="${image}"
-                                      alt="${tabs[activeTab].title} - تصویر ${
-                                index + 1
-                              }"
-                                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
-                                  />
-                                  
-                                  <!-- Effect -->
-                                  <div class="absolute inset-0 bg-sky-400 opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
-                                      <h3 class="text-white text-xl font-bold lg:font-extrabold lg:text-2xl px-4 py-2 text-center shadow-text">
-                                          ${tabs[activeTab].title}
-                                      </h3>
-                                  </div>
-                                  
-                                  <!-- Bottom effect -->
-                                  <div class="absolute bottom-0 font-bold left-1/2 transform -translate-x-1/2 bg-sky-300 rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                      <span class="text-sm font-medium text-white">
-                                          ${tabs[activeTab].title}
-                                      </span>
-                                  </div>
-                              </div>
-                          `
-                            )
-                            .join("")}
-                      </div>
-                  </div>
-              </div>
-          `;
-
-        appContainer.innerHTML = html;
-
-        // اضافه کردن event listener برای دکمه‌های تب
-        document.querySelectorAll("[data-id]").forEach((button) => {
-          button.addEventListener("click", function () {
-            activeTab = parseInt(this.getAttribute("data-id"));
-            renderHealthTips(); // رندر مجدد کامپوننت
-          });
-        });
-      }
-
-      // اجرای اولیه
-      document.addEventListener("DOMContentLoaded", renderHealthTips);
-    </script>
+    <!-- ---------------------------------------Healt tips------------------------------- -->
 
     <div id="business-partners-app"></div>
-    <script>
-      // تعریف داده‌های شرکای تجاری
-      const partners = [
-        { id: 1, name: "شرکت الف", logo: "public/baner/clients-3.png" },
-        { id: 2, name: "شرکت ب", logo: "public/baner/clients-8.png" },
-        { id: 3, name: "شرکت ج", logo: "public/baner/clients-6.png" },
-        { id: 4, name: "شرکت د", logo: "public/baner/clients-6.png" },
-        { id: 5, name: "شرکت ه", logo: "public/baner/clients-5.png" },
-        { id: 6, name: "شرکت و", logo: "public/baner/clients-4.png" },
-        { id: 7, name: "شرکت ز", logo: "public/baner/clients-3.png" },
-        { id: 8, name: "شرکت ح", logo: "public/baner/clients-2.png" },
-        { id: 9, name: "شرکت ط", logo: "public/baner/clients-1.png" },
-      ];
-
-      function renderBusinessPartners() {
-        const appContainer = document.getElementById("business-partners-app");
-
-        let html = `
-        <div class="bg-white py-10 px-4 md:px-8 rtl py-[90px]">
-            <div class="container mx-auto">
-                <div class="relative overflow-hidden">
-                    <div id="scroll-container" class="flex overflow-x-auto py-4 space-x-8 rtl:space-x-reverse cursor-grab scroll-container" style="scroll-behavior: smooth; user-select: none;">
-                        <div class="w-4 shrink-0"></div>
-                        ${partners
-                          .map(
-                            (partner) => `
-                            <div class="shrink-0 w-32 md:w-40 h-24 md:h-28 flex items-center justify-center p-4 transition-transform duration-300">
-                                <img
-                                    src="${partner.logo}"
-                                    alt="${partner.name}"
-                                    class="max-w-full max-h-full object-contain"
-                                    draggable="false"
-                                />
-                            </div>
-                        `
-                          )
-                          .join("")}
-                        <div class="w-4 shrink-0"></div>
-                    </div>
-                    <div class="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-                    <div class="absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-                </div>
-            </div>
-        </div>
-    `;
-
-        appContainer.innerHTML = html;
-
-        let isDragging = false;
-        let startX = 0;
-        let scrollLeft = 0;
-        let autoScrollEnabled = true;
-        let scrollInterval;
-
-        const scrollContainer = document.getElementById("scroll-container");
-
-        function startAutoScroll() {
-          if (!autoScrollEnabled) return;
-
-          scrollInterval = setInterval(() => {
-            if (scrollContainer && !isDragging) {
-              if (
-                scrollContainer.scrollLeft >=
-                scrollContainer.scrollWidth - scrollContainer.clientWidth
-              ) {
-                scrollContainer.scrollLeft = 0;
-              } else {
-                scrollContainer.scrollLeft += 1;
-              }
-            }
-          }, 20);
-        }
-
-        startAutoScroll();
-
-        scrollContainer.addEventListener("mousedown", function (e) {
-          isDragging = true;
-          autoScrollEnabled = false;
-          clearInterval(scrollInterval);
-          startX = e.pageX - scrollContainer.offsetLeft;
-          scrollLeft = scrollContainer.scrollLeft;
-          scrollContainer.style.scrollBehavior = "auto";
-          scrollContainer.classList.remove("cursor-grab");
-          scrollContainer.classList.add("cursor-grabbing");
-        });
-
-        scrollContainer.addEventListener("mousemove", function (e) {
-          if (!isDragging) return;
-          e.preventDefault();
-          const x = e.pageX - scrollContainer.offsetLeft;
-          const walk = (x - startX) * 2;
-          scrollContainer.scrollLeft = scrollLeft - walk;
-        });
-
-        function stopDragging() {
-          if (!isDragging) return;
-          isDragging = false;
-          scrollContainer.style.scrollBehavior = "smooth";
-          scrollContainer.classList.add("cursor-grab");
-          scrollContainer.classList.remove("cursor-grabbing");
-
-          setTimeout(() => {
-            autoScrollEnabled = true;
-            startAutoScroll();
-          }, 2000);
-        }
-
-        scrollContainer.addEventListener("mouseup", stopDragging);
-        scrollContainer.addEventListener("mouseleave", stopDragging);
-
-        scrollContainer.addEventListener("touchstart", function (e) {
-          isDragging = true;
-          autoScrollEnabled = false;
-          clearInterval(scrollInterval);
-          startX = e.touches[0].pageX - scrollContainer.offsetLeft;
-          scrollLeft = scrollContainer.scrollLeft;
-          scrollContainer.style.scrollBehavior = "auto";
-        });
-
-        scrollContainer.addEventListener("touchmove", function (e) {
-          if (!isDragging) return;
-          const x = e.touches[0].pageX - scrollContainer.offsetLeft;
-          const walk = (x - startX) * 2;
-          scrollContainer.scrollLeft = scrollLeft - walk;
-        });
-
-        scrollContainer.addEventListener("touchend", stopDragging);
-
-        window.addEventListener("beforeunload", function () {
-          clearInterval(scrollInterval);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", renderBusinessPartners);
-    </script>
+    <script src="./js/business-partners.js"></script>
 
     <!-- ------------------------------------------------ Emergency Services----------------------- -->
 
@@ -1954,6 +1090,7 @@
         </p>
       </div>
     </div>
+    <!-- -------------------------------------------- Our media----------------------- -->
 
     <div class="w-full flex flex-col items-center py-12 px-4 md:px-8">
       <div class="text-center mb-10">
@@ -1968,7 +1105,7 @@
         </p>
       </div>
 
-      <!----------------------------------------- Cards---------------------------->
+      <!--------------------------- Cards----------------------->
       <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- کارت اول -->
         <div class="relative flex flex-col h-full">
@@ -2243,33 +1380,11 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const backToTopButton = document.getElementById("back-to-top");
-
-        backToTopButton.addEventListener("click", function () {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 300) {
-            backToTopButton.classList.add("opacity-100");
-            backToTopButton.classList.remove("opacity-0");
-          } else {
-            backToTopButton.classList.add("opacity-0");
-            backToTopButton.classList.remove("opacity-100");
-          }
-        });
-      });
-    </script>
-
+    <script src="./js/scrollTop.js"></script>
     <!-----------------------------------Righet cadr----------------------------------->
     <div class="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
       <div
-        class="bg-red-500 text-white p-3 rounded-l-lg shadow-lg flex flex-col items-center justify-center cursor-pointer hover:bg-red-600 transition-all duration-300"
+        class="bg-rose-400 text-white p-3 rounded-l-lg shadow-lg flex flex-col items-center justify-center cursor-pointer hover:bg-red-600 transition-all duration-300"
       >
         <div class="relative">
           <i class="fas fa-shopping-cart text-xl"></i>
@@ -2282,87 +1397,6 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        //  Bottons menu
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenuOverlay = document.getElementById(
-          "mobile-menu-overlay"
-        );
-        const mobileMenu = document.getElementById("mobile-menu");
-        const closeButton = document.getElementById("close-mobile-menu");
-        const menuHeaders = document.querySelectorAll(".menu-header");
-
-        // Open the menu
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenuOverlay.classList.remove("hidden");
-          mobileMenu.style.width = "70%";
-        });
-
-        //  Close the  menu
-        function closeMenu() {
-          mobileMenu.style.width = "0";
-          setTimeout(() => {
-            mobileMenuOverlay.classList.add("hidden");
-          }, 500);
-        }
-
-        closeButton.addEventListener("click", closeMenu);
-
-        //   Close with click on overlay
-        mobileMenuOverlay.addEventListener("click", function (event) {
-          if (event.target === mobileMenuOverlay) {
-            closeMenu();
-          }
-        });
-
-        //  Close and Open the submenus
-        menuHeaders.forEach((header) => {
-          header.addEventListener("click", function () {
-            const menuItem = this.closest(".menu-item");
-            const submenu = menuItem.querySelector(".submenu");
-            const icon = this.querySelector("i");
-            const isActive = menuItem.classList.contains("active");
-
-            // Close the all open submenu
-            document.querySelectorAll(".menu-item.active").forEach((item) => {
-              if (item !== menuItem) {
-                const itemSubmenu = item.querySelector(".submenu");
-                const itemIcon = item.querySelector("i");
-
-                item.classList.remove("active");
-                item.style.borderBottom = "none";
-                itemIcon.style.transform = "rotate(0deg)";
-
-                // Close the submenu
-                itemSubmenu.style.maxHeight = "0";
-                setTimeout(() => {
-                  itemSubmenu.classList.add("hidden");
-                }, 300);
-              }
-            });
-
-            // Open or close
-            if (isActive) {
-              menuItem.classList.remove("active");
-              menuItem.style.borderBottom = "none";
-              icon.style.transform = "rotate(0deg)";
-
-              submenu.style.maxHeight = "0";
-              setTimeout(() => {
-                submenu.classList.add("hidden");
-              }, 300);
-            } else {
-              menuItem.classList.add("active");
-              menuItem.style.borderBottom = "4px solid #3b82f6";
-              icon.style.transform = "rotate(-90deg)";
-
-              submenu.classList.remove("hidden");
-              submenu.style.maxHeight = submenu.scrollHeight + "px";
-            }
-          });
-        });
-      });
-    </script>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

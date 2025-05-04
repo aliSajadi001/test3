@@ -1,0 +1,25 @@
+.banner-slide {
+    position: absolute;
+    inset: 0;
+    transition: opacity 1000ms ease-in-out;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-content {
+    position: absolute;
+    transition: opacity 1000ms ease-in-out;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .service-card:hover .service-label {
+    transform: translate(-50%, -16px);
+  }
+
+  .service-label {
+    transition: transform 0.3s ease;
+    transform: translate(-50%, 0);
+  }

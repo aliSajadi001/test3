@@ -1,0 +1,77 @@
+.background-fade {
+    background-color: rgb(245, 245, 244); /* stone-100 equivalent */
+    position: relative;
+    overflow: hidden; /* Ensure the pseudo-element doesn't extend outside */
+  }
+
+  /* Add gradient fade effect at the top */
+  .background-fade::before {
+    content: "";
+    position: absolute;
+    top: -50px; /* Start above the container to ensure no visible border */
+    left: 0;
+    right: 0;
+    height: 150px; /* Make it tall enough to cover the top portion */
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(245, 245, 244, 0.9) 60%,
+      rgba(245, 245, 244, 0.8) 80%,
+      rgba(245, 245, 244, 0) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Add padding to the top to compensate for the fade effect */
+  #information-section {
+    padding-top: 50px;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 2; /* Ensure content appears above the gradient */
+  }
+
+  .stat-icon {
+    color: #d97706; /* amber-600 equivalent */
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-value {
+    color: #d97706; /* amber-600 equivalent */
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+  }
+
+  .stat-label {
+    color: #172554; /* blue-950 equivalent */
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0 2.5rem;
+    position: relative;
+    z-index: 2; /* Ensure content appears above the gradient */
+  }
+
+  @media (min-width: 768px) {
+    .stats-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .background-fade::before {
+      height: 200px; /* Taller gradient on larger screens */
+    }
+  }
