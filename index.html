@@ -75,7 +75,7 @@
   <body class="font-sans">
     <!----------------------------------- Header Section ------------------------------>
     <div
-      class="w-full h-[55px] px-[60px] hidden lg:flex items-center justify-between"
+      class="w-full h-[55px] px-[60px] hidden lg:flex bg-stone-50 items-center justify-between"
     >
       <div class="flex items-center gap-10 h-full">
         <!-- Section 1: Request Callback -->
@@ -84,16 +84,28 @@
         </button>
         <!-- Section 2: Icons -->
         <div class="flex items-center justify-between gap-10">
-          <a href="#" class="text-gray-500">
+          <a
+            href="#"
+            class="text-gray-500 hover:text-sky-500 transition-colors duration-300"
+          >
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="#" class="text-gray-500">
+          <a
+            href="#"
+            class="text-gray-500 hover:text-sky-500 transition-colors duration-300"
+          >
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="#" class="text-gray-500">
+          <a
+            href="#"
+            class="text-gray-500 hover:text-sky-500 transition-colors duration-300"
+          >
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="#" class="text-gray-500">
+          <a
+            href="#"
+            class="text-gray-500 hover:text-sky-500 transition-colors duration-300"
+          >
             <i class="fa-brands fa-twitter"></i>
           </a>
         </div>
@@ -348,10 +360,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>خانه</span>
+              <span class="font-bold text-blue-900">خانه</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -391,10 +403,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>صفحات</span>
+              <span class="font-bold text-blue-900">صفحات</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -434,10 +446,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>وبلاگ</span>
+              <span class="font-bold text-blue-900">وبلاگ</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -477,10 +489,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>نمونه کارها</span>
+              <span class="font-bold text-blue-900">نمونه کارها</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -520,10 +532,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>فروشگاه</span>
+              <span class="font-bold text-blue-900">فروشگاه</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -563,10 +575,10 @@
               href="#"
               class="nav-link text-blue-950 py-10 font-medium flex items-center"
             >
-              <span>مخاطبین</span>
+              <span class="font-bold text-blue-900">مخاطبین</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-1"
+                class="h-4 w-4 text-blue-900 mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -605,7 +617,7 @@
         <div class="mr-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 lg:text-gray-600 text-white"
+            class="h-6 w-6 lg:text-blue-900 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -721,11 +733,14 @@
       </div>
     </section>
 
-    <script src="./baner.js"></script>
+    <script src="./js/baner.js"></script>
 
     <!------------------------------------- SubBanner  ------------------------------------->
     <div class="w-full relative flex items-center justify-center">
-      <div class="bg-sky-400 py-[100px] px-[30px]">
+      <div class="bg-sky-400 lg:py-[120px] md:py-[140px] py-[180px] px-[30px]">
+        <div>
+          <p class="text-white font-extrabold lg:text-xl">-مزایا</p>
+        </div>
         <div class="flex flex-col md:flex-row">
           <!-- First Part -->
           <div class="flex-1 mb-4 md:mr-4 text-right">
@@ -748,7 +763,7 @@
       </div>
 
       <div
-        class="w-full absolute top-[350px] md:top-[250px] lg:top-[240px] flex items-center justify-center"
+        class="w-full absolute top-[490px] md:top-[350px] lg:top-[330px] flex items-center justify-center"
       >
         <div
           class="flex lg:flex-row flex-col items-center gap-20 justify-center lg:px-10 flex-wrap w-full"
@@ -814,7 +829,7 @@
 
     <!------------------------------------- Information Section ------------------------------------->
     <div
-      class="py-30 mt-[850px] lg:mt-[200px] md:mt-[900px] background-fade w-full"
+      class="py-30 mt-[1000px] lg:mt-[640px] xl:mt-[210px] md:mt-[900px] background-fade w-full"
       id="information-section"
     >
       <div class="stats-container" id="stats-container">
@@ -1299,37 +1314,37 @@
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۲۱.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">دوشنبه</span>
             </div>
 
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۲۱.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">سه‌شنبه</span>
             </div>
 
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۲۱.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">چهارشنبه</span>
             </div>
 
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۲۱.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">پنجشنبه</span>
             </div>
 
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۲۱.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">جمعه</span>
             </div>
 
             <div class="flex items-center justify-between">
               <span class="text-blue-800 text-md">۸.۰۰ - ۱۸.۰۰</span>
-              <div class="w-12 h-px bg-gray-300 mx-2"></div>
+              <div class="w-[40%] h-px bg-gray-300 mx-2"></div>
               <span class="text-blue-800 text-md font-medium">شنبه/یکشنبه</span>
             </div>
           </div>
